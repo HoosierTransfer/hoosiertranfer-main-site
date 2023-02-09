@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+:root {
+    --background-color: #343741;
+    --card-container: #4b4954;
+    --card-color: #dee0eb;
+    --card-darker: #aeb1ba;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background: var(--background-color);
+}
+
+.card-container {
+    background: var(--card-container);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: clamp(1px, 1vw, 10px);
+    border-radius: 10px;
+    margin: auto;
+    min-height: 100px;
+    width: 95%;
+}
+
+.card {
+    transition: 0.5s ease;
+    padding: clamp(1px, 1vw, 10px);
+    border-radius: 10px;
+    min-width: 40%;
+    max-width: 45%;
+    background: var(--card-color);
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+@media (max-width : 1020px) {
+    .card {
+        width: 60%;
+        max-width: 60%;
+    }
+}
+
+@media (max-width : 820px) {
+    .card {
+        width: 75%;
+        max-width: 75%;
+    }
+}
+
+@media (max-width : 620px) {
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.card .container {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 150px;
+    gap: 0px clamp(1px, 1vw, 10px);
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". .";
+}
+
+.card .image {
+    border-radius: 10px;
+}
+
+.card .title {
+    border-radius: 10px;
+    background: var(--card-darker);
+    display: table;
+    min-width: 100%;
+    overflow-wrap: anywhere;
+    height: 150px;
+}
+
+.card h1 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.card .content {
+    flex-basis: 100%;
+    border-radius: 10px;
+    background: var(--card-darker);
+    margin-top: clamp(1px, 1vw, 10px);
+    padding: clamp(1px, 1vw, 10px);
+}
